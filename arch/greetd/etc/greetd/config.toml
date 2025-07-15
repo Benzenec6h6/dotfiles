@@ -2,5 +2,5 @@
 vt = 1                       # tty1 を利用
 
 [default_session]
-user = "YOUR_USER"
+user = "teto"
 command = "xinit /usr/bin/xmonad -- :0 -keeptty -nolisten tcp vt1"
