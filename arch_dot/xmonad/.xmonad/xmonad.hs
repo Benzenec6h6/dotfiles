@@ -1,13 +1,28 @@
+-- ~/.xmonad/xmonad.hs
 import XMonad
-import XMonad.Util.EZConfig (additionalKeys)
+import XMonad.Hooks.DynamicLog
+import XMonad.Util.EZConfig
+import XMonad.Util.Run (spawnPipe)
+import System.IO (hPutStrLn)
 
-main = xmonad $ def
-    { modMask = mod4Mask -- SuperキーをModに
-    , terminal = "alacritty"
-    , borderWidth = 2
-    }
-    `additionalKeys`
-    [ ((mod4Mask, xK_Return), spawn "alacritty")
-    , ((mod4Mask, xK_d), spawn "dmenu_run")
-    , ((mod4Mask .|. shiftMask, xK_q), io (exitWith ExitSuccess))
-    ]
+main = do
+    xmproc <- spawnPipe "xmobar"
+    xmonad $ def
+        { terminal           = "alacritty"
+        , modMask            = mod4Mask
+        , borderWidth        = 2
+        , focusedBorderColor = "#268bd2"
+        , normalBorderColor  = "#dddddd"
+        , logHook            = dynamicLogWithPP xmobarPP
+                                { ppOutput = hPutStrLn xmproc
+                                , ppTitle  = xmobarColor "green" "" . shorten 50
+                                }
+        }
+        `additionalKeysP`
+        [ ("M-S-r", spawn "xmonad --recompile; xmonad --restart")
+        , ("M-p", spawn "dmenu_run")
+        ]
+
+-- 自前で shorten を定義
+shorten :: Int -> String -> String
+shorten n xs = if length xs > n then take n xs ++ "..." else xs
