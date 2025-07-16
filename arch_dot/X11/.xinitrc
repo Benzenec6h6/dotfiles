@@ -20,4 +20,6 @@ fcitx5 -d &
 picom &
 
 # ステータスバー付きで XMonad 起動
-exec xmonad
+exec xmonad > ~/.xmonad/xmonad.log 2>&1
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
