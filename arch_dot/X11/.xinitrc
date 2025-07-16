@@ -9,6 +9,8 @@ export XMODIFIERS="@im=fcitx"
 # キーマップなど
 setxkbmap -model jp106 -layout jp
 
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
 # 壁紙設定（feh使用）
 #feh --bg-scale ~/Pictures/wallpaper.jpg &
 
@@ -21,5 +23,3 @@ picom &
 
 # ステータスバー付きで XMonad 起動
 exec xmonad > ~/.xmonad/xmonad.log 2>&1
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
