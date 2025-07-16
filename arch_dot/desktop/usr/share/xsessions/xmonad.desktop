@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Xmonad
+Comment=Tiling window manager written in Haskell
+Exec=xmonad
+Type=Application
+DesktopNames=Xmonad

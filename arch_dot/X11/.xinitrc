@@ -1,16 +1,23 @@
-#!/bin/bash
+#!/bin/sh
+# ~/.xinitrc
 
-# IM 起動（fcitx5）
+# 日本語入力（fcitx5）の設定（Wayland でなければ）
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-fcitx5 &
+export XMODIFIERS="@im=fcitx"
 
-# 日本語キーボードなど
+# キーマップなど
 setxkbmap -model jp106 -layout jp
 
-# 壁紙設定（feh, swww など）
-# feh --bg-scale ~/Pictures/wallpaper.jpg &
+# 壁紙設定（feh使用）
+#feh --bg-scale ~/Pictures/wallpaper.jpg &
 
-# XMonad などを起動
+# トレイ常駐アプリ（任意）
+#nm-applet &
+fcitx5 -d &
+
+# コンポジタ（影・透明）
+picom &
+
+# ステータスバー付きで XMonad 起動
 exec xmonad
