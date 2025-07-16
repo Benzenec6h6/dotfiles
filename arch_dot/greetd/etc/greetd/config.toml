@@ -3,4 +3,4 @@ vt = 1                       # tty1 を利用
 
 [default_session]
 user = "teto"
-command = "agreety --cmd xmonad"
+command = "dbus-run-session xinit"
