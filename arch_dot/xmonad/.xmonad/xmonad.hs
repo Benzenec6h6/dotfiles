@@ -14,9 +14,7 @@ main = do
         , focusedBorderColor = "#268bd2"
         , normalBorderColor  = "#dddddd"
         , logHook            = dynamicLogWithPP xmobarPP
-                                { ppOutput = hPutStrLn xmproc
-                                , ppTitle  = xmobarColor "green" "" . shorten 50
-                                }
+                                { ppOutput = hPutStrLn xmproc}
         }
         `additionalKeysP`
         [ ("M-S-r", spawn "xmonad --recompile; xmonad --restart")
