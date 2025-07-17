@@ -1,6 +1,6 @@
 [terminal]
-vt = 1                       # tty1 を利用
+vt = 1
 
 [default_session]
 user = "teto"
-command = "dbus-run-session /usr/bin/xinit"
+command = "dbus-run-session -- seatd-launch startx"
