@@ -16,10 +16,10 @@ setxkbmap -model jp106 -layout jp
 
 # トレイ常駐アプリ（任意）
 #nm-applet &
-fcitx5 -d &
+#fcitx5 -d &
 
 # コンポジタ（影・透明）
-picom &
+#picom &
 
 # ステータスバー付きで XMonad 起動
 exec xmonad > ~/.xmonad/xmonad.log 2>&1
