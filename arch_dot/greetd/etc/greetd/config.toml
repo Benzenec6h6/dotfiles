@@ -3,4 +3,4 @@ vt = 1
 
 [default_session]
 user = "teto"
-command = "dbus-run-session -- seatd-launch startx"
+command = "seatd-launch dbus-run-session xinit"
