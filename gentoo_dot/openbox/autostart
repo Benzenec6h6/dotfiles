@@ -1,0 +1,6 @@
+picom &
+nm-applet &
+volumeicon &
+tint2 &
+setxkbmap -layout jp &
+xsetroot -cursor_name left_ptr &

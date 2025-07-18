@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_config>
+  <keyboard>
+    <keybind key="W-Return">
+      <action name="Execute"><command>alacritty</command></action>
+    </keybind>
+    <keybind key="W-q">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute"><command>dmenu_run</command></action>
+    </keybind>
+  </keyboard>
+
+  <theme>
+    <name>Clearlooks</name>
+    <titleLayout>NLIMC</titleLayout>
+  </theme>
+
+  <mouse>
+    <dragThreshold>8</dragThreshold>
+  </mouse>
+
+  <fonts>
+    <activeWindow>
+      <font>Sans-10</font>
+    </activeWindow>
+  </fonts>
+</openbox_config>
